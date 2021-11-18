@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 namespace CapaDatos
 {
-    class DCategoria
+    public class DCategoria
     {
         //Puse _ antes del nombre para diferenciar en los "seter y geter"
         private int _IdCategoria;
@@ -180,7 +180,7 @@ namespace CapaDatos
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spmostar_categoria";
+                SqlCmd.CommandText = "spmostrar_categoria";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
@@ -206,7 +206,7 @@ namespace CapaDatos
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spbuscar_categoria";
+                SqlCmd.CommandText = "sp_buscar_categoria";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParTextoBuscar = new SqlParameter();
