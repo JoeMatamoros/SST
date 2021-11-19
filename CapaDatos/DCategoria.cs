@@ -64,7 +64,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(ParNombre);
 
                 SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@nombre";
+                ParDescripcion.ParameterName = "@descripcion";
                 ParDescripcion.SqlDbType = SqlDbType.VarChar;
                 ParDescripcion.Size = 255;
                 ParDescripcion.Value = Categoria.Descripcion;
@@ -113,7 +113,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(ParNombre);
 
                 SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@nombre";
+                ParDescripcion.ParameterName = "@descripcion";
                 ParDescripcion.SqlDbType = SqlDbType.VarChar;
                 ParDescripcion.Size = 255;
                 ParDescripcion.Value = Categoria.Descripcion;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//IMPORTE DE CONTROLADOR 
 using Controlador;
 
 
@@ -20,8 +21,8 @@ namespace CapaPresentacion
         public FrmCategoria()
         {
             InitializeComponent();
-            //ttMensaje
-            this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese nombre de categoria");
+            //ttMensaje es del control ToolTip para hacer una interfaz mas amistosa direccionando al usuario
+            this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese nombre de la categoria");
         }
 
         //MOSTRAR CONFIRMACION
@@ -82,7 +83,7 @@ namespace CapaPresentacion
         private void Mostrar() {
             this.dataListado.DataSource = NCategoria.Mostrar();
             this.OcultarColumnas();
-            lblTotal.Text = "Total de registros:"+ Convert.ToString(dataListado.Rows.Count);
+            lblTotal.Text = "Total de registros: "+ Convert.ToString(dataListado.Rows.Count);
         
         }
 
@@ -111,6 +112,153 @@ namespace CapaPresentacion
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             this.BuscarNombre();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = true;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(true);
+            this.txtNombre.Focus();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try {
+
+                string rpta="";
+                if(this.txtNombre.Text == string.Empty){
+                    MensajeError("Falta ingresar nombre de la categoria");
+                    errorIcono.SetError(txtNombre, "Ingrese un nombre");
+
+                } else{
+
+                    if (this.IsNuevo) {
+                        rpta = NCategoria.Insertar(this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim());
+                    } else{
+                        rpta = NCategoria.Editar(Convert.ToInt32(this.txtIdcategoria.Text),this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim());
+                    }
+
+                    if (rpta.Equals("OK"))
+                    {
+                        if (this.IsNuevo)//cuando nuevo es igual a true
+                        {
+                            this.MensajeOk("Se insertó de forma correcta");
+                        }
+                        else
+                        {
+                            this.MensajeOk("Se actualizó de forma correcta");
+                        }
+                    }
+                    else
+                    {
+                        this.MensajeError(rpta);
+                    }
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.Botones();
+                    this.Limpiar();
+                    this.Mostrar();
+                }
+
+            } catch (Exception ex) {
+
+                MessageBox.Show(ex.Message+ ex.StackTrace);
+            }
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtIdcategoria.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idcategoria"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            this.txtDescripcion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["descripcion"].Value);
+
+            this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (!this.txtIdcategoria.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.Botones();
+                this.Habilitar(true);
+            }
+            else
+            {
+                MensajeError("Debe seleccionar el registro a modificar");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(false);
+
+        }
+
+        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEliminar.Checked) {
+
+                this.dataListado.Columns[0].Visible = true;
+
+            } else{
+
+                this.dataListado.Columns[0].Visible = false;
+            }
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Para poder hacerles "check" en el DataGridView
+            if(e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+               
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Desea eliminar los registros?","Sistema Ventas",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                if (Opcion == DialogResult.OK) {
+                    string Codigo;
+                    string rpta="";
+
+                    //Recorrer todos los registros y verificar si estan marcados para pasarlos al metodo eliminar
+                    foreach(DataGridViewRow row in dataListado.Rows)
+                    {
+                        //Revisa fila por fila si la primer columna es check
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            rpta = NCategoria.Eliminar(Convert.ToInt32(Codigo));
+                            if (rpta.Equals("OK"))
+                            {
+                                this.MensajeOk("Se elimino correctamente");
+                            }
+                            else {
+                                this.MensajeError(rpta);
+                            }
+                        }
+                    }
+                    this.Mostrar();
+                
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
     }
 }
