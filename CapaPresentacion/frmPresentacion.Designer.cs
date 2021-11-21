@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion
 {
-    partial class FrmCategoria
+    partial class frmPresentacion
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -42,48 +42,40 @@ namespace CapaPresentacion
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtIdcategoria = new System.Windows.Forms.TextBox();
+            this.txtIdpresentacion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.tabControl1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // ttMensaje
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(21, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Categorias";
+            this.ttMensaje.IsBalloon = true;
             // 
-            // tabControl1
+            // label3
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(5, 72);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1003, 510);
-            this.tabControl1.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Código:";
             // 
             // tabPage1
             // 
@@ -197,36 +189,6 @@ namespace CapaPresentacion
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(995, 481);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Mantenimiento";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnEditar);
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.btnNuevo);
-            this.groupBox1.Controls.Add(this.txtDescripcion);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtIdcategoria);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(18, 18);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 444);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Categorías";
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(618, 282);
@@ -287,14 +249,14 @@ namespace CapaPresentacion
             this.txtNombre.Size = new System.Drawing.Size(357, 22);
             this.txtNombre.TabIndex = 4;
             // 
-            // txtIdcategoria
+            // txtIdpresentacion
             // 
-            this.txtIdcategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtIdcategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdcategoria.Location = new System.Drawing.Point(123, 45);
-            this.txtIdcategoria.Name = "txtIdcategoria";
-            this.txtIdcategoria.Size = new System.Drawing.Size(152, 22);
-            this.txtIdcategoria.TabIndex = 3;
+            this.txtIdpresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtIdpresentacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdpresentacion.Location = new System.Drawing.Point(123, 45);
+            this.txtIdpresentacion.Name = "txtIdpresentacion";
+            this.txtIdpresentacion.Size = new System.Drawing.Size(152, 22);
+            this.txtIdpresentacion.TabIndex = 3;
             // 
             // label5
             // 
@@ -314,42 +276,79 @@ namespace CapaPresentacion
             this.label4.TabIndex = 1;
             this.label4.Text = "Nombre:";
             // 
-            // label3
+            // groupBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Código:";
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.btnNuevo);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtIdpresentacion);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(18, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(958, 444);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Presentaciones";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(995, 481);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Mantenimiento";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(21, 58);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1003, 510);
+            this.tabControl1.TabIndex = 3;
             // 
             // errorIcono
             // 
             this.errorIcono.ContainerControl = this;
             // 
-            // ttMensaje
+            // label1
             // 
-            this.ttMensaje.IsBalloon = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(37, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(234, 36);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Presentaciones";
             // 
-            // FrmCategoria
+            // frmPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1020, 594);
+            this.ClientSize = new System.Drawing.Size(1036, 588);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
-            this.Name = "FrmCategoria";
-            this.Text = "Mantenimiento de Categorías";
-            this.Load += new System.EventHandler(this.FrmCategoria_Load);
-            this.DoubleClick += new System.EventHandler(this.FrmCategoria_DoubleClick);
-            this.tabControl1.ResumeLayout(false);
+            this.Name = "frmPresentacion";
+            this.Text = "Mantenimiento Presentacion";
+            this.Load += new System.EventHandler(this.frmPresentacion_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
-            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -358,8 +357,8 @@ namespace CapaPresentacion
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.ToolTip ttMensaje;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
@@ -370,19 +369,19 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtIdcategoria;
+        private System.Windows.Forms.TextBox txtIdpresentacion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ErrorProvider errorIcono;
-        private System.Windows.Forms.ToolTip ttMensaje;
+        private System.Windows.Forms.Label label1;
     }
 }

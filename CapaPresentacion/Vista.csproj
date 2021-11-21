@@ -50,7 +50,18 @@
     <Compile Include="FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPresentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPresentacion.Designer.cs">
+      <DependentUpon>frmPresentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controlador\Controlador.csproj">
@@ -61,6 +72,13 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPresentacion.resx">
+      <DependentUpon>frmPresentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
