@@ -45,6 +45,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DArticulo.cs" />
     <Compile Include="DCategoria.cs" />
+    <Compile Include="DCliente.cs" />
     <Compile Include="DPresentacion.cs" />
     <Compile Include="DProveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
