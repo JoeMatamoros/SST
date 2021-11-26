@@ -263,11 +263,29 @@ namespace CapaPresentacion
 
                     if (this.IsNuevo)
                     {
-                        rpta = NCliente.Insertar(this.txtNombre.Text.ToUpper(), this.txtApellidos.Text.ToUpper(),this.cbSexo.Text,dtFechaNac.Value,cbTipo_Documento.Text, txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text);
+                        rpta = NCliente.Insertar(
+                            this.txtNombre.Text.ToUpper(),
+                            this.txtApellidos.Text.ToUpper(),
+                            this.cbSexo.Text,dtFechaNac.Value,
+                            cbTipo_Documento.Text,
+                            txtNum_Documento.Text, 
+                            txtDireccion.Text,
+                            txtTelefono.Text,
+                            txtEmail.Text);
                     }
                     else
                     {
-                        rpta = NCliente.Editar(Convert.ToInt32(this.txtIdcliente.Text), this.txtNombre.Text.ToUpper(), this.txtApellidos.Text.ToUpper(), this.cbSexo.Text, dtFechaNac.Value, cbTipo_Documento.Text, txtNum_Documento.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text);
+                        rpta = NCliente.Editar(
+                            Convert.ToInt32(this.txtIdcliente.Text),
+                            this.txtNombre.Text.ToUpper(),
+                            this.txtApellidos.Text.ToUpper(),
+                            this.cbSexo.Text,
+                            dtFechaNac.Value,
+                            cbTipo_Documento.Text,
+                            txtNum_Documento.Text,
+                            txtDireccion.Text,
+                            txtTelefono.Text,
+                            txtEmail.Text);
                     }
 
                     if (rpta.Equals("OK"))

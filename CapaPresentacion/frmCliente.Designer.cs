@@ -113,7 +113,7 @@ namespace CapaPresentacion
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(559, 318);
+            this.txtEmail.Location = new System.Drawing.Point(576, 321);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 22);
             this.txtEmail.TabIndex = 18;
@@ -121,7 +121,7 @@ namespace CapaPresentacion
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(502, 323);
+            this.label9.Location = new System.Drawing.Point(519, 326);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 17);
             this.label9.TabIndex = 17;
@@ -131,7 +131,7 @@ namespace CapaPresentacion
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Location = new System.Drawing.Point(133, 315);
+            this.txtTelefono.Location = new System.Drawing.Point(150, 318);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(357, 22);
             this.txtTelefono.TabIndex = 16;
@@ -139,7 +139,7 @@ namespace CapaPresentacion
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 318);
+            this.label8.Location = new System.Drawing.Point(38, 323);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 17);
             this.label8.TabIndex = 15;
@@ -149,7 +149,7 @@ namespace CapaPresentacion
             // 
             this.txtNum_Documento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtNum_Documento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNum_Documento.Location = new System.Drawing.Point(308, 153);
+            this.txtNum_Documento.Location = new System.Drawing.Point(308, 161);
             this.txtNum_Documento.Name = "txtNum_Documento";
             this.txtNum_Documento.Size = new System.Drawing.Size(357, 22);
             this.txtNum_Documento.TabIndex = 14;
@@ -162,7 +162,7 @@ namespace CapaPresentacion
             "RUC",
             "PAS",
             "CEX"});
-            this.cbTipo_Documento.Location = new System.Drawing.Point(150, 153);
+            this.cbTipo_Documento.Location = new System.Drawing.Point(150, 161);
             this.cbTipo_Documento.Name = "cbTipo_Documento";
             this.cbTipo_Documento.Size = new System.Drawing.Size(152, 24);
             this.cbTipo_Documento.TabIndex = 13;
@@ -171,7 +171,7 @@ namespace CapaPresentacion
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 153);
+            this.label7.Location = new System.Drawing.Point(34, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 17);
             this.label7.TabIndex = 12;
@@ -179,7 +179,7 @@ namespace CapaPresentacion
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(618, 375);
+            this.btnCancelar.Location = new System.Drawing.Point(638, 370);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(166, 23);
             this.btnCancelar.TabIndex = 9;
@@ -189,7 +189,7 @@ namespace CapaPresentacion
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(451, 375);
+            this.btnEditar.Location = new System.Drawing.Point(471, 370);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(152, 23);
             this.btnEditar.TabIndex = 8;
@@ -199,7 +199,7 @@ namespace CapaPresentacion
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(291, 375);
+            this.btnGuardar.Location = new System.Drawing.Point(311, 370);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(136, 23);
             this.btnGuardar.TabIndex = 7;
@@ -209,7 +209,7 @@ namespace CapaPresentacion
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(123, 375);
+            this.btnNuevo.Location = new System.Drawing.Point(143, 370);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(138, 23);
             this.btnNuevo.TabIndex = 6;
@@ -221,7 +221,7 @@ namespace CapaPresentacion
             // 
             this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDireccion.Location = new System.Drawing.Point(133, 197);
+            this.txtDireccion.Location = new System.Drawing.Point(150, 200);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -232,16 +232,16 @@ namespace CapaPresentacion
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(133, 85);
+            this.txtNombre.Location = new System.Drawing.Point(150, 83);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(357, 22);
+            this.txtNombre.Size = new System.Drawing.Size(327, 22);
             this.txtNombre.TabIndex = 4;
             // 
             // txtIdcliente
             // 
             this.txtIdcliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtIdcliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdcliente.Location = new System.Drawing.Point(133, 45);
+            this.txtIdcliente.Location = new System.Drawing.Point(150, 45);
             this.txtIdcliente.Name = "txtIdcliente";
             this.txtIdcliente.Size = new System.Drawing.Size(152, 22);
             this.txtIdcliente.TabIndex = 3;
@@ -249,7 +249,7 @@ namespace CapaPresentacion
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 202);
+            this.label5.Location = new System.Drawing.Point(35, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 2;
@@ -258,7 +258,7 @@ namespace CapaPresentacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 88);
+            this.label4.Location = new System.Drawing.Point(34, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 17);
             this.label4.TabIndex = 1;
@@ -267,7 +267,7 @@ namespace CapaPresentacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 45);
+            this.label3.Location = new System.Drawing.Point(34, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 0;
@@ -431,15 +431,15 @@ namespace CapaPresentacion
             // 
             this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellidos.Location = new System.Drawing.Point(571, 83);
+            this.txtApellidos.Location = new System.Drawing.Point(564, 83);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(357, 22);
+            this.txtApellidos.Size = new System.Drawing.Size(321, 22);
             this.txtApellidos.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(503, 86);
+            this.label2.Location = new System.Drawing.Point(489, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 21;
