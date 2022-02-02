@@ -47,6 +47,7 @@
     <Compile Include="DCategoria.cs" />
     <Compile Include="DCliente.cs" />
     <Compile Include="DDetalle_Ingreso.cs" />
+    <Compile Include="DIngreso.cs" />
     <Compile Include="DPresentacion.cs" />
     <Compile Include="DProveedor.cs" />
     <Compile Include="DTrabajador.cs" />

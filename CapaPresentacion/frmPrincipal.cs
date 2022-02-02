@@ -210,5 +210,13 @@ namespace CapaPresentacion
                 this.TsVentas.Enabled = false;
             }
         }
+
+        private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIngreso frm = FrmIngreso.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
     }
 }
