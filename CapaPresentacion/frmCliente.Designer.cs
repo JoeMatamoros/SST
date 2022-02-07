@@ -31,6 +31,12 @@ namespace CapaPresentacion
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbSexo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -63,12 +69,6 @@ namespace CapaPresentacion
             this.label1 = new System.Windows.Forms.Label();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbSexo = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtFechaNac = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -108,6 +108,62 @@ namespace CapaPresentacion
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Clientes";
+            // 
+            // dtFechaNac
+            // 
+            this.dtFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaNac.Location = new System.Drawing.Point(440, 123);
+            this.dtFechaNac.Name = "dtFechaNac";
+            this.dtFechaNac.Size = new System.Drawing.Size(225, 22);
+            this.dtFechaNac.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(308, 123);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 17);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Fecha Nacimiento:";
+            // 
+            // cbSexo
+            // 
+            this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.cbSexo.Location = new System.Drawing.Point(150, 123);
+            this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Size = new System.Drawing.Size(121, 24);
+            this.cbSexo.TabIndex = 24;
+            this.cbSexo.Text = "F";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Sexo:";
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtApellidos.Location = new System.Drawing.Point(564, 83);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(321, 22);
+            this.txtApellidos.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(489, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Apellidos:";
             // 
             // txtEmail
             // 
@@ -243,6 +299,7 @@ namespace CapaPresentacion
             this.txtIdcliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdcliente.Location = new System.Drawing.Point(150, 45);
             this.txtIdcliente.Name = "txtIdcliente";
+            this.txtIdcliente.ReadOnly = true;
             this.txtIdcliente.Size = new System.Drawing.Size(152, 22);
             this.txtIdcliente.TabIndex = 3;
             // 
@@ -426,62 +483,6 @@ namespace CapaPresentacion
             // ttMensaje
             // 
             this.ttMensaje.IsBalloon = true;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellidos.Location = new System.Drawing.Point(564, 83);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(321, 22);
-            this.txtApellidos.TabIndex = 22;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(489, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Apellidos:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 17);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Sexo:";
-            // 
-            // cbSexo
-            // 
-            this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.cbSexo.Location = new System.Drawing.Point(150, 123);
-            this.cbSexo.Name = "cbSexo";
-            this.cbSexo.Size = new System.Drawing.Size(121, 24);
-            this.cbSexo.TabIndex = 24;
-            this.cbSexo.Text = "F";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(308, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 17);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Fecha Nacimiento:";
-            // 
-            // dtFechaNac
-            // 
-            this.dtFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaNac.Location = new System.Drawing.Point(440, 123);
-            this.dtFechaNac.Name = "dtFechaNac";
-            this.dtFechaNac.Size = new System.Drawing.Size(225, 22);
-            this.dtFechaNac.TabIndex = 26;
             // 
             // frmCliente
             // 

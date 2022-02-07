@@ -40,6 +40,8 @@ namespace CapaPresentacion
             this.label16 = new System.Windows.Forms.Label();
             this.dataListadoDetalle = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dtFecha_Vencimiento = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.dtFecha_Produccion = new System.Windows.Forms.DateTimePicker();
@@ -50,6 +52,7 @@ namespace CapaPresentacion
             this.label12 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnBuscarArticulo = new System.Windows.Forms.Button();
             this.txtArticulo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdarticulo = new System.Windows.Forms.TextBox();
@@ -60,6 +63,7 @@ namespace CapaPresentacion
             this.cbTipo_Comprobante = new System.Windows.Forms.ComboBox();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -82,10 +86,6 @@ namespace CapaPresentacion
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnQuitar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnBuscarArticulo = new System.Windows.Forms.Button();
-            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoDetalle)).BeginInit();
@@ -218,6 +218,28 @@ namespace CapaPresentacion
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.BackgroundImage = global::CapaPresentacion.Properties.Resources.x;
+            this.btnQuitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQuitar.Location = new System.Drawing.Point(993, 66);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(49, 39);
+            this.btnQuitar.TabIndex = 34;
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackgroundImage = global::CapaPresentacion.Properties.Resources._;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregar.Location = new System.Drawing.Point(993, 21);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(49, 39);
+            this.btnAgregar.TabIndex = 33;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // dtFecha_Vencimiento
             // 
             this.dtFecha_Vencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -305,6 +327,17 @@ namespace CapaPresentacion
             this.label5.Size = new System.Drawing.Size(86, 17);
             this.label5.TabIndex = 23;
             this.label5.Text = "Stock inicial:";
+            // 
+            // btnBuscarArticulo
+            // 
+            this.btnBuscarArticulo.BackgroundImage = global::CapaPresentacion.Properties.Resources.buscar;
+            this.btnBuscarArticulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(294, 21);
+            this.btnBuscarArticulo.Name = "btnBuscarArticulo";
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(58, 24);
+            this.btnBuscarArticulo.TabIndex = 22;
+            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
             // 
             // txtArticulo
             // 
@@ -399,6 +432,17 @@ namespace CapaPresentacion
             this.label10.Size = new System.Drawing.Size(47, 17);
             this.label10.TabIndex = 21;
             this.label10.Text = "Fecha";
+            // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.BackgroundImage = global::CapaPresentacion.Properties.Resources.buscar;
+            this.btnBuscarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(569, 40);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(58, 24);
+            this.btnBuscarProveedor.TabIndex = 18;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
+            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
             // 
             // label7
             // 
@@ -556,7 +600,7 @@ namespace CapaPresentacion
             this.dataListado.RowHeadersWidth = 51;
             this.dataListado.RowTemplate.Height = 24;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(1039, 407);
+            this.dataListado.Size = new System.Drawing.Size(1077, 407);
             this.dataListado.TabIndex = 7;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
@@ -626,50 +670,6 @@ namespace CapaPresentacion
             this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Fecha inicio";
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BackgroundImage = global::CapaPresentacion.Properties.Resources.x;
-            this.btnQuitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnQuitar.Location = new System.Drawing.Point(993, 66);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(49, 39);
-            this.btnQuitar.TabIndex = 34;
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackgroundImage = global::CapaPresentacion.Properties.Resources._;
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(993, 21);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(49, 39);
-            this.btnAgregar.TabIndex = 33;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnBuscarArticulo
-            // 
-            this.btnBuscarArticulo.BackgroundImage = global::CapaPresentacion.Properties.Resources.buscar;
-            this.btnBuscarArticulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(294, 21);
-            this.btnBuscarArticulo.Name = "btnBuscarArticulo";
-            this.btnBuscarArticulo.Size = new System.Drawing.Size(58, 24);
-            this.btnBuscarArticulo.TabIndex = 22;
-            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
-            this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
-            // 
-            // btnBuscarProveedor
-            // 
-            this.btnBuscarProveedor.BackgroundImage = global::CapaPresentacion.Properties.Resources.buscar;
-            this.btnBuscarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(569, 40);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(58, 24);
-            this.btnBuscarProveedor.TabIndex = 18;
-            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
-            this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
             // 
             // FrmIngreso
             // 
