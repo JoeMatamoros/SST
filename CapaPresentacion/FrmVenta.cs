@@ -460,5 +460,12 @@ namespace CapaPresentacion
                 MensajeError("No hay fila para remover");
             }
         }
+
+        private void btnComprobante_Click(object sender, EventArgs e)
+        {
+            FrmReporteFactura frm = new FrmReporteFactura();
+            frm.Idventa = Convert.ToInt32(this.dataListado.CurrentRow.Cells["idventa"].Value);
+            frm.ShowDialog();
+        }
     }
 }
