@@ -133,7 +133,7 @@ namespace CapaPresentacion
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1117, 538);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Mantenimiento";
+            this.tabPage2.Text = "Generar venta";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -552,7 +552,7 @@ namespace CapaPresentacion
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1117, 538);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listado";
+            this.tabPage1.Text = "Listado de ventas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnComprobante
