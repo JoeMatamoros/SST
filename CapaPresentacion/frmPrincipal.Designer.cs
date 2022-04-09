@@ -47,8 +47,6 @@ namespace CapaPresentacion
             this.MnuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.trabajadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuConsultas = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprasPorFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockDeArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuVer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,21 +127,21 @@ namespace CapaPresentacion
             // arículosToolStripMenuItem
             // 
             this.arículosToolStripMenuItem.Name = "arículosToolStripMenuItem";
-            this.arículosToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.arículosToolStripMenuItem.Text = "Arículos";
+            this.arículosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.arículosToolStripMenuItem.Text = "Artículos";
             this.arículosToolStripMenuItem.Click += new System.EventHandler(this.arículosToolStripMenuItem_Click);
             // 
             // categoríasToolStripMenuItem
             // 
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
-            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.categoríasToolStripMenuItem.Text = "Categorías";
             this.categoríasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
             // 
             // presentacionesToolStripMenuItem
             // 
             this.presentacionesToolStripMenuItem.Name = "presentacionesToolStripMenuItem";
-            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.presentacionesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.presentacionesToolStripMenuItem.Text = "Presentaciones";
             this.presentacionesToolStripMenuItem.Click += new System.EventHandler(this.presentacionesToolStripMenuItem_Click);
             // 
@@ -184,14 +182,14 @@ namespace CapaPresentacion
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(144, 26);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem1_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -213,24 +211,10 @@ namespace CapaPresentacion
             // MnuConsultas
             // 
             this.MnuConsultas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ventasPorFechasToolStripMenuItem,
-            this.comprasPorFechasToolStripMenuItem,
             this.stockDeArtículosToolStripMenuItem});
             this.MnuConsultas.Name = "MnuConsultas";
             this.MnuConsultas.Size = new System.Drawing.Size(86, 24);
             this.MnuConsultas.Text = "Consultas";
-            // 
-            // ventasPorFechasToolStripMenuItem
-            // 
-            this.ventasPorFechasToolStripMenuItem.Name = "ventasPorFechasToolStripMenuItem";
-            this.ventasPorFechasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ventasPorFechasToolStripMenuItem.Text = "Ventas por fechas";
-            // 
-            // comprasPorFechasToolStripMenuItem
-            // 
-            this.comprasPorFechasToolStripMenuItem.Name = "comprasPorFechasToolStripMenuItem";
-            this.comprasPorFechasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.comprasPorFechasToolStripMenuItem.Text = "Compras por fechas";
             // 
             // stockDeArtículosToolStripMenuItem
             // 
@@ -485,8 +469,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.ToolStripMenuItem MnuMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem trabajadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuConsultas;
-        private System.Windows.Forms.ToolStripMenuItem ventasPorFechasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprasPorFechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockDeArtículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backUpBdToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton TsCompras;

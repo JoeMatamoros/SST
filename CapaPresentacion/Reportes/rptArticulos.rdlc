@@ -218,7 +218,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>codigo</rd:DefaultName>
@@ -338,7 +340,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Presentacion</rd:DefaultName>
@@ -422,7 +426,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>29.7cm</Height>
+    <Height>25.74183cm</Height>
     <Style />
   </Body>
   <Width>22.78801cm</Width>
@@ -436,10 +440,10 @@
           <Source>Embedded</Source>
           <Value>ID41ia8tZAAVL_AC_</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.52cm</Top>
+          <Top>0.10583cm</Top>
           <Left>0.55368cm</Left>
-          <Height>1.5cm</Height>
-          <Width>1.64817cm</Width>
+          <Height>1.91417cm</Height>
+          <Width>2.0715cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -567,7 +571,9 @@
                   <Style />
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>

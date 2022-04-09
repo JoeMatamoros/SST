@@ -11,7 +11,7 @@ namespace Controlador
 {
     public class NVenta
     {
-        public static string Insertar(int idcliente, int idtrabajador, DateTime fecha, string tipo_comprobante, string serie, string correlativo, decimal igv, DataTable dtDetalles)
+        public static string Insertar(int idcliente, int idtrabajador, DateTime fecha, string tipo_comprobante, string serie, string correlativo, decimal igv, string estado,DataTable dtDetalles)
         {
 
             DVenta Obj = new DVenta();
@@ -22,6 +22,7 @@ namespace Controlador
             Obj.Serie = serie;
             Obj.Correlativo = correlativo;
             Obj.Igv = igv;
+            Obj.Estado = estado;
             List<DDetalle_Venta> detalles = new List<DDetalle_Venta>();
 
             foreach (DataRow row in dtDetalles.Rows)
@@ -37,11 +38,11 @@ namespace Controlador
             return Obj.Insertar(Obj, detalles);
         }
 
-        public static string Eliminar(int idventa)
+        public static string Anular(int idventa)
         {
             DVenta Obj = new DVenta();
             Obj.Idventa=idventa;
-            return Obj.Eliminar(Obj);
+            return Obj.Anular(Obj);
         }
 
         public static DataTable Mostrar()

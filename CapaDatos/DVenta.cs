@@ -19,6 +19,7 @@ namespace CapaDatos
         private string _Serie;
         private string _Correlativo;
         private decimal _Igv;
+        private string _Estado;
 
         public int Idventa { get => _Idventa; set => _Idventa = value; }
         public int Idcliente { get => _Idcliente; set => _Idcliente = value; }
@@ -28,13 +29,14 @@ namespace CapaDatos
         public string Serie { get => _Serie; set => _Serie = value; }
         public string Correlativo { get => _Correlativo; set => _Correlativo = value; }
         public decimal Igv { get => _Igv; set => _Igv = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
 
         public DVenta() 
         {
         
         }
 
-        public DVenta(int idventa, int idcliente, int idtrabajador, DateTime fecha, string tipo_comprobante, string serie, string correlativo, decimal igv)
+        public DVenta(int idventa, int idcliente, int idtrabajador, DateTime fecha, string tipo_comprobante, string serie, string correlativo, decimal igv, string estado)
         {
             this.Idventa = idventa;
             this.Idcliente = idcliente;
@@ -44,6 +46,7 @@ namespace CapaDatos
             this.Serie = serie;
             this.Correlativo = correlativo;
             this.Igv = igv;
+            this.Estado = estado;
         }
 
         //ACTUALIZAR EL STOCK
@@ -161,6 +164,14 @@ namespace CapaDatos
                 ParIgv.Value = Venta.Igv;
                 SqlCmd.Parameters.Add(ParIgv);
 
+
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.VarChar;
+                ParEstado.Size = 7;
+                ParEstado.Value = Venta.Estado;
+                SqlCmd.Parameters.Add(ParEstado);
+
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
 
                 if (rpta.Equals("OK"))
@@ -212,7 +223,7 @@ namespace CapaDatos
 
         }
         //ELIMINAR VENTA
-        public string Eliminar(DVenta Venta)
+        public string Anular(DVenta Venta)
         {
             string rpta = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -223,7 +234,7 @@ namespace CapaDatos
                 //
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "speliminar_venta";
+                SqlCmd.CommandText = "spanular_venta";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParIdventa = new SqlParameter();
@@ -232,7 +243,7 @@ namespace CapaDatos
                 ParIdventa.Value = Venta.Idventa;
                 SqlCmd.Parameters.Add(ParIdventa);
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "OK";
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el registro";
 
             }
             catch (Exception ex)

@@ -231,7 +231,7 @@ namespace CapaPresentacion
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea eliminar los registros?", "Sistema Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Desea anular los registros?", "Sistema Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (Opcion == DialogResult.OK)
                 {
                     string Codigo;
@@ -244,10 +244,10 @@ namespace CapaPresentacion
                         if (Convert.ToBoolean(row.Cells[0].Value))
                         {
                             Codigo = Convert.ToString(row.Cells[1].Value);
-                            rpta = NVenta.Eliminar(Convert.ToInt32(Codigo));
+                            rpta = NVenta.Anular(Convert.ToInt32(Codigo));
                             if (rpta.Equals("OK"))
                             {
-                                this.MensajeOk("Se eliminó correctamente la venta");
+                                this.MensajeOk("Se anuló correctamente la venta");
                             }
                             else
                             {
@@ -353,6 +353,7 @@ namespace CapaPresentacion
                             txtSerie.Text,
                             txtCorrelativo.Text,
                             Convert.ToDecimal(this.txtIgv.Text),
+                            "EMITIDO",
                             dtDetalle);
                     }
 
