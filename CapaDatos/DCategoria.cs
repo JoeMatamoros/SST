@@ -50,24 +50,30 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spinsertar_categoria";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdCategoria = new SqlParameter();
-                ParIdCategoria.ParameterName = "@idcategoria";
-                ParIdCategoria.SqlDbType = SqlDbType.Int;
-                ParIdCategoria.Direction = ParameterDirection.Output;
+                SqlParameter ParIdCategoria = new SqlParameter
+                {
+                    ParameterName = "@idcategoria",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
                 SqlCmd.Parameters.Add(ParIdCategoria);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 50;
-                ParNombre.Value = Categoria.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Categoria.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@descripcion";
-                ParDescripcion.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion.Size = 255;
-                ParDescripcion.Value = Categoria.Descripcion;
+                SqlParameter ParDescripcion = new SqlParameter
+                {
+                    ParameterName = "@descripcion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 255,
+                    Value = Categoria.Descripcion
+                };
                 SqlCmd.Parameters.Add(ParDescripcion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
@@ -99,24 +105,30 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speditar_categoria";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdCategoria = new SqlParameter();
-                ParIdCategoria.ParameterName = "@idcategoria";
-                ParIdCategoria.SqlDbType = SqlDbType.Int;
-                ParIdCategoria.Value = Categoria.IdCategoria;
+                SqlParameter ParIdCategoria = new SqlParameter
+                {
+                    ParameterName = "@idcategoria",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Categoria.IdCategoria
+                };
                 SqlCmd.Parameters.Add(ParIdCategoria);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 50;
-                ParNombre.Value = Categoria.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Categoria.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@descripcion";
-                ParDescripcion.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion.Size = 255;
-                ParDescripcion.Value = Categoria.Descripcion;
+                SqlParameter ParDescripcion = new SqlParameter
+                {
+                    ParameterName = "@descripcion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 255,
+                    Value = Categoria.Descripcion
+                };
                 SqlCmd.Parameters.Add(ParDescripcion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se edito el registro";
@@ -149,10 +161,12 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speliminar_categoria";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdCategoria = new SqlParameter();
-                ParIdCategoria.ParameterName = "@idcategoria";
-                ParIdCategoria.SqlDbType = SqlDbType.Int;
-                ParIdCategoria.Value = Categoria.IdCategoria;
+                SqlParameter ParIdCategoria = new SqlParameter
+                {
+                    ParameterName = "@idcategoria",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Categoria.IdCategoria
+                };
                 SqlCmd.Parameters.Add(ParIdCategoria);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se elimino el registro";
@@ -209,11 +223,13 @@ namespace CapaDatos
                 SqlCmd.CommandText = "sp_buscar_categoria";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParTextoBuscar = new SqlParameter();
-                ParTextoBuscar.ParameterName = "@textobuscar";
-                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar.Size = 50;
-                ParTextoBuscar.Value = Categoria.TextoBuscar;
+                SqlParameter ParTextoBuscar = new SqlParameter
+                {
+                    ParameterName = "@textobuscar",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Categoria.TextoBuscar
+                };
                 SqlCmd.Parameters.Add(ParTextoBuscar);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
