@@ -512,6 +512,7 @@ namespace CapaPresentacion
             this.txtIdventa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdventa.Location = new System.Drawing.Point(141, 43);
             this.txtIdventa.Name = "txtIdventa";
+            this.txtIdventa.ReadOnly = true;
             this.txtIdventa.Size = new System.Drawing.Size(152, 22);
             this.txtIdventa.TabIndex = 3;
             // 

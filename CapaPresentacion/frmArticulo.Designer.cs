@@ -410,6 +410,7 @@ namespace CapaPresentacion
             this.txtIdarticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdarticulo.Location = new System.Drawing.Point(141, 43);
             this.txtIdarticulo.Name = "txtIdarticulo";
+            this.txtIdarticulo.ReadOnly = true;
             this.txtIdarticulo.Size = new System.Drawing.Size(152, 22);
             this.txtIdarticulo.TabIndex = 3;
             // 

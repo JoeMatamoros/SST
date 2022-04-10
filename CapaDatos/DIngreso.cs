@@ -184,10 +184,12 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spanular_ingreso";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdingreso = new SqlParameter();
-                ParIdingreso.ParameterName = "@idingreso";
-                ParIdingreso.SqlDbType = SqlDbType.Int;
-                ParIdingreso.Value = Ingreso.Idingreso;
+                SqlParameter ParIdingreso = new SqlParameter
+                {
+                    ParameterName = "@idingreso",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Ingreso.Idingreso
+                };
                 SqlCmd.Parameters.Add(ParIdingreso);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se anulo el registro";

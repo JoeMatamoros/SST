@@ -62,49 +62,63 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spinsertar_articulo";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdArticulo = new SqlParameter();
-                ParIdArticulo.ParameterName = "@idarticulo";
-                ParIdArticulo.SqlDbType = SqlDbType.Int;
-                ParIdArticulo.Direction = ParameterDirection.Output;
+                SqlParameter ParIdArticulo = new SqlParameter
+                {
+                    ParameterName = "@idarticulo",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
                 SqlCmd.Parameters.Add(ParIdArticulo);
 
-                SqlParameter ParCodigo = new SqlParameter();
-                ParCodigo.ParameterName = "@codigo";
-                ParCodigo.SqlDbType = SqlDbType.VarChar;
-                ParCodigo.Size = 50;
-                ParCodigo.Value = Articulo.Codigo;
+                SqlParameter ParCodigo = new SqlParameter
+                {
+                    ParameterName = "@codigo",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Articulo.Codigo
+                };
                 SqlCmd.Parameters.Add(ParCodigo);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 255;
-                ParNombre.Value = Articulo.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 255,
+                    Value = Articulo.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@descripcion";
-                ParDescripcion.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion.Size = 1024;
-                ParDescripcion.Value = Articulo.Descripcion;
+                SqlParameter ParDescripcion = new SqlParameter
+                {
+                    ParameterName = "@descripcion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 1024,
+                    Value = Articulo.Descripcion
+                };
                 SqlCmd.Parameters.Add(ParDescripcion);
 
-                SqlParameter ParImagen = new SqlParameter();
-                ParImagen.ParameterName = "@imagen";
-                ParImagen.SqlDbType = SqlDbType.Image;
-                ParImagen.Value = Articulo.Imagen;
+                SqlParameter ParImagen = new SqlParameter
+                {
+                    ParameterName = "@imagen",
+                    SqlDbType = SqlDbType.Image,
+                    Value = Articulo.Imagen
+                };
                 SqlCmd.Parameters.Add(ParImagen);
 
-                SqlParameter ParIdCategoria = new SqlParameter();
-                ParIdCategoria.ParameterName = "@idcategoria";
-                ParIdCategoria.SqlDbType = SqlDbType.Int;
-                ParIdCategoria.Value = Articulo.IdCategoria;
+                SqlParameter ParIdCategoria = new SqlParameter
+                {
+                    ParameterName = "@idcategoria",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Articulo.IdCategoria
+                };
                 SqlCmd.Parameters.Add(ParIdCategoria);
 
-                SqlParameter ParIdPresentacion = new SqlParameter();
-                ParIdPresentacion.ParameterName = "@idpresentacion";
-                ParIdPresentacion.SqlDbType = SqlDbType.Int;
-                ParIdPresentacion.Value = Articulo.IdPresentacion;
+                SqlParameter ParIdPresentacion = new SqlParameter
+                {
+                    ParameterName = "@idpresentacion",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Articulo.IdPresentacion
+                };
                 SqlCmd.Parameters.Add(ParIdPresentacion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
@@ -136,49 +150,63 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speditar_articulo";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdArticulo = new SqlParameter();
-                ParIdArticulo.ParameterName = "@idarticulo";
-                ParIdArticulo.SqlDbType = SqlDbType.Int;
-                ParIdArticulo.Value = Articulo.IdArticulo;
+                SqlParameter ParIdArticulo = new SqlParameter
+                {
+                    ParameterName = "@idarticulo",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Articulo.IdArticulo
+                };
                 SqlCmd.Parameters.Add(ParIdArticulo);
 
-                SqlParameter ParCodigo = new SqlParameter();
-                ParCodigo.ParameterName = "@codigo";
-                ParCodigo.SqlDbType = SqlDbType.VarChar;
-                ParCodigo.Size = 50;
-                ParCodigo.Value = Articulo.Codigo;
+                SqlParameter ParCodigo = new SqlParameter
+                {
+                    ParameterName = "@codigo",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Articulo.Codigo
+                };
                 SqlCmd.Parameters.Add(ParCodigo);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 255;
-                ParNombre.Value = Articulo.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 255,
+                    Value = Articulo.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@descripcion";
-                ParDescripcion.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion.Size = 1024;
-                ParDescripcion.Value = Articulo.Descripcion;
+                SqlParameter ParDescripcion = new SqlParameter
+                {
+                    ParameterName = "@descripcion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 1024,
+                    Value = Articulo.Descripcion
+                };
                 SqlCmd.Parameters.Add(ParDescripcion);
 
-                SqlParameter ParImagen = new SqlParameter();
-                ParImagen.ParameterName = "@imagen";
-                ParImagen.SqlDbType = SqlDbType.Image;
-                ParImagen.Value = Articulo.Imagen;
+                SqlParameter ParImagen = new SqlParameter
+                {
+                    ParameterName = "@imagen",
+                    SqlDbType = SqlDbType.Image,
+                    Value = Articulo.Imagen
+                };
                 SqlCmd.Parameters.Add(ParImagen);
 
-                SqlParameter ParIdCategoria = new SqlParameter();
-                ParIdCategoria.ParameterName = "@idcategoria";
-                ParIdCategoria.SqlDbType = SqlDbType.Int;
-                ParIdCategoria.Value = Articulo.IdCategoria;
+                SqlParameter ParIdCategoria = new SqlParameter
+                {
+                    ParameterName = "@idcategoria",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Articulo.IdCategoria
+                };
                 SqlCmd.Parameters.Add(ParIdCategoria);
 
-                SqlParameter ParIdPresentacion = new SqlParameter();
-                ParIdPresentacion.ParameterName = "@idpresentacion";
-                ParIdPresentacion.SqlDbType = SqlDbType.Int;
-                ParIdPresentacion.Value = Articulo.IdPresentacion;
+                SqlParameter ParIdPresentacion = new SqlParameter
+                {
+                    ParameterName = "@idpresentacion",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Articulo.IdPresentacion
+                };
                 SqlCmd.Parameters.Add(ParIdPresentacion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
@@ -210,10 +238,12 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speliminar_articulo";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdArticulo = new SqlParameter();
-                ParIdArticulo.ParameterName = "@idarticulo";
-                ParIdArticulo.SqlDbType = SqlDbType.Int;
-                ParIdArticulo.Value = Articulo.IdArticulo;
+                SqlParameter ParIdArticulo = new SqlParameter
+                {
+                    ParameterName = "@idarticulo",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Articulo.IdArticulo
+                };
                 SqlCmd.Parameters.Add(ParIdArticulo);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se elimino el registro";
@@ -272,11 +302,13 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spbuscar_articulo_nombre";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParTextoBuscar = new SqlParameter();
-                ParTextoBuscar.ParameterName = "@textobuscar";
-                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar.Size = 50;
-                ParTextoBuscar.Value = Articulo.TextoBuscar;
+                SqlParameter ParTextoBuscar = new SqlParameter
+                {
+                    ParameterName = "@textobuscar",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Articulo.TextoBuscar
+                };
                 SqlCmd.Parameters.Add(ParTextoBuscar);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
