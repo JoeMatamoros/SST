@@ -71,73 +71,93 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spinsertar_cliente";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdCliente = new SqlParameter();
-                ParIdCliente.ParameterName = "@idcliente";
-                ParIdCliente.SqlDbType = SqlDbType.Int;
-                ParIdCliente.Direction = ParameterDirection.Output;
+                SqlParameter ParIdCliente = new SqlParameter
+                {
+                    ParameterName = "@idcliente",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
                 SqlCmd.Parameters.Add(ParIdCliente);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 50;
-                ParNombre.Value = Cliente.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParApellidos = new SqlParameter();
-                ParApellidos.ParameterName = "@apellidos";
-                ParApellidos.SqlDbType = SqlDbType.VarChar;
-                ParApellidos.Size = 50;
-                ParApellidos.Value = Cliente.Apellidos;
+                SqlParameter ParApellidos = new SqlParameter
+                {
+                    ParameterName = "@apellidos",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Apellidos
+                };
                 SqlCmd.Parameters.Add(ParApellidos);
 
-                SqlParameter ParSexo = new SqlParameter();
-                ParSexo.ParameterName = "@sexo";
-                ParSexo.SqlDbType = SqlDbType.VarChar;
-                ParSexo.Size = 1;
-                ParSexo.Value = Cliente.Sexo;
+                SqlParameter ParSexo = new SqlParameter
+                {
+                    ParameterName = "@sexo",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 1,
+                    Value = Cliente.Sexo
+                };
                 SqlCmd.Parameters.Add(ParSexo);
 
-                SqlParameter ParFecha_Nacimiento = new SqlParameter();
-                ParFecha_Nacimiento.ParameterName = "@fecha_nacimiento";
-                ParFecha_Nacimiento.SqlDbType = SqlDbType.Date;
-                ParFecha_Nacimiento.Size = 1;
-                ParFecha_Nacimiento.Value = Cliente.Fecha_Nacimiento;
+                SqlParameter ParFecha_Nacimiento = new SqlParameter
+                {
+                    ParameterName = "@fecha_nacimiento",
+                    SqlDbType = SqlDbType.Date,
+                    Size = 1,
+                    Value = Cliente.Fecha_Nacimiento
+                };
                 SqlCmd.Parameters.Add(ParFecha_Nacimiento);
 
-                SqlParameter ParTipoDocumento = new SqlParameter();
-                ParTipoDocumento.ParameterName = "@tipo_documento";
-                ParTipoDocumento.SqlDbType = SqlDbType.VarChar;
-                ParTipoDocumento.Size = 50;
-                ParTipoDocumento.Value = Cliente.Tipo_Documento;
+                SqlParameter ParTipoDocumento = new SqlParameter
+                {
+                    ParameterName = "@tipo_documento",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Tipo_Documento
+                };
                 SqlCmd.Parameters.Add(ParTipoDocumento);
 
-                SqlParameter ParNum_Documento = new SqlParameter();
-                ParNum_Documento.ParameterName = "@num_documento";
-                ParNum_Documento.SqlDbType = SqlDbType.VarChar;
-                ParNum_Documento.Size = 50;
-                ParNum_Documento.Value = Cliente.Num_Documento;
+                SqlParameter ParNum_Documento = new SqlParameter
+                {
+                    ParameterName = "@num_documento",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Num_Documento
+                };
                 SqlCmd.Parameters.Add(ParNum_Documento);
 
-                SqlParameter ParDireccion = new SqlParameter();
-                ParDireccion.ParameterName = "@direccion";
-                ParDireccion.SqlDbType = SqlDbType.VarChar;
-                ParDireccion.Size = 100;
-                ParDireccion.Value = Cliente.Direccion;
+                SqlParameter ParDireccion = new SqlParameter
+                {
+                    ParameterName = "@direccion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 100,
+                    Value = Cliente.Direccion
+                };
                 SqlCmd.Parameters.Add(ParDireccion);
 
-                SqlParameter ParTelefono = new SqlParameter();
-                ParTelefono.ParameterName = "@telefono";
-                ParTelefono.SqlDbType = SqlDbType.VarChar;
-                ParTelefono.Size = 100;
-                ParTelefono.Value = Cliente.Telefono;
+                SqlParameter ParTelefono = new SqlParameter
+                {
+                    ParameterName = "@telefono",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 100,
+                    Value = Cliente.Telefono
+                };
                 SqlCmd.Parameters.Add(ParTelefono);
 
-                SqlParameter ParEmail = new SqlParameter();
-                ParEmail.ParameterName = "@email";
-                ParEmail.SqlDbType = SqlDbType.VarChar;
-                ParEmail.Size = 50;
-                ParEmail.Value = Cliente.Email;
+                SqlParameter ParEmail = new SqlParameter
+                {
+                    ParameterName = "@email",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Email
+                };
                 SqlCmd.Parameters.Add(ParEmail);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
@@ -171,73 +191,93 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speditar_cliente";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdCliente = new SqlParameter();
-                ParIdCliente.ParameterName = "@idcliente";
-                ParIdCliente.SqlDbType = SqlDbType.Int;
-                ParIdCliente.Value = Cliente.IdCliente;
+                SqlParameter ParIdCliente = new SqlParameter
+                {
+                    ParameterName = "@idcliente",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Cliente.IdCliente
+                };
                 SqlCmd.Parameters.Add(ParIdCliente);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 50;
-                ParNombre.Value = Cliente.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParApellidos = new SqlParameter();
-                ParApellidos.ParameterName = "@apellidos";
-                ParApellidos.SqlDbType = SqlDbType.VarChar;
-                ParApellidos.Size = 50;
-                ParApellidos.Value = Cliente.Apellidos;
+                SqlParameter ParApellidos = new SqlParameter
+                {
+                    ParameterName = "@apellidos",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Apellidos
+                };
                 SqlCmd.Parameters.Add(ParApellidos);
 
-                SqlParameter ParSexo = new SqlParameter();
-                ParSexo.ParameterName = "@sexo";
-                ParSexo.SqlDbType = SqlDbType.VarChar;
-                ParSexo.Size = 1;
-                ParSexo.Value = Cliente.Sexo;
+                SqlParameter ParSexo = new SqlParameter
+                {
+                    ParameterName = "@sexo",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 1,
+                    Value = Cliente.Sexo
+                };
                 SqlCmd.Parameters.Add(ParSexo);
 
-                SqlParameter ParFecha_Nacimiento = new SqlParameter();
-                ParFecha_Nacimiento.ParameterName = "@fecha_nacimiento";
-                ParFecha_Nacimiento.SqlDbType = SqlDbType.Date;
-                ParFecha_Nacimiento.Size = 1;
-                ParFecha_Nacimiento.Value = Cliente.Fecha_Nacimiento;
+                SqlParameter ParFecha_Nacimiento = new SqlParameter
+                {
+                    ParameterName = "@fecha_nacimiento",
+                    SqlDbType = SqlDbType.Date,
+                    Size = 1,
+                    Value = Cliente.Fecha_Nacimiento
+                };
                 SqlCmd.Parameters.Add(ParFecha_Nacimiento);
 
-                SqlParameter ParTipoDocumento = new SqlParameter();
-                ParTipoDocumento.ParameterName = "@tipo_documento";
-                ParTipoDocumento.SqlDbType = SqlDbType.VarChar;
-                ParTipoDocumento.Size = 50;
-                ParTipoDocumento.Value = Cliente.Tipo_Documento;
+                SqlParameter ParTipoDocumento = new SqlParameter
+                {
+                    ParameterName = "@tipo_documento",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Tipo_Documento
+                };
                 SqlCmd.Parameters.Add(ParTipoDocumento);
 
-                SqlParameter ParNum_Documento = new SqlParameter();
-                ParNum_Documento.ParameterName = "@num_documento";
-                ParNum_Documento.SqlDbType = SqlDbType.VarChar;
-                ParNum_Documento.Size = 50;
-                ParNum_Documento.Value = Cliente.Num_Documento;
+                SqlParameter ParNum_Documento = new SqlParameter
+                {
+                    ParameterName = "@num_documento",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Num_Documento
+                };
                 SqlCmd.Parameters.Add(ParNum_Documento);
 
-                SqlParameter ParDireccion = new SqlParameter();
-                ParDireccion.ParameterName = "@direccion";
-                ParDireccion.SqlDbType = SqlDbType.VarChar;
-                ParDireccion.Size = 100;
-                ParDireccion.Value = Cliente.Direccion;
+                SqlParameter ParDireccion = new SqlParameter
+                {
+                    ParameterName = "@direccion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 100,
+                    Value = Cliente.Direccion
+                };
                 SqlCmd.Parameters.Add(ParDireccion);
 
-                SqlParameter ParTelefono = new SqlParameter();
-                ParTelefono.ParameterName = "@telefono";
-                ParTelefono.SqlDbType = SqlDbType.VarChar;
-                ParTelefono.Size = 100;
-                ParTelefono.Value = Cliente.Telefono;
+                SqlParameter ParTelefono = new SqlParameter
+                {
+                    ParameterName = "@telefono",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 100,
+                    Value = Cliente.Telefono
+                };
                 SqlCmd.Parameters.Add(ParTelefono);
 
-                SqlParameter ParEmail = new SqlParameter();
-                ParEmail.ParameterName = "@email";
-                ParEmail.SqlDbType = SqlDbType.VarChar;
-                ParEmail.Size = 50;
-                ParEmail.Value = Cliente.Email;
+                SqlParameter ParEmail = new SqlParameter
+                {
+                    ParameterName = "@email",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.Email
+                };
                 SqlCmd.Parameters.Add(ParEmail);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
@@ -270,10 +310,12 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speliminar_cliente";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdCliente = new SqlParameter();
-                ParIdCliente.ParameterName = "@idcliente";
-                ParIdCliente.SqlDbType = SqlDbType.Int;
-                ParIdCliente.Value = Cliente.IdCliente;
+                SqlParameter ParIdCliente = new SqlParameter
+                {
+                    ParameterName = "@idcliente",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Cliente.IdCliente
+                };
                 SqlCmd.Parameters.Add(ParIdCliente);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se elimino el registro";
@@ -331,11 +373,13 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spbuscar_cliente_apellido";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParTextoBuscar = new SqlParameter();
-                ParTextoBuscar.ParameterName = "@textobuscar";
-                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar.Size = 50;
-                ParTextoBuscar.Value = Cliente.TextoBuscar;
+                SqlParameter ParTextoBuscar = new SqlParameter
+                {
+                    ParameterName = "@textobuscar",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Cliente.TextoBuscar
+                };
                 SqlCmd.Parameters.Add(ParTextoBuscar);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
@@ -364,11 +408,13 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spbuscar_cliente_numero_documento";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParTextoBuscar = new SqlParameter();
-                ParTextoBuscar.ParameterName = "@textobuscar";
-                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar.Size = 11;
-                ParTextoBuscar.Value = Cliente.TextoBuscar;
+                SqlParameter ParTextoBuscar = new SqlParameter
+                {
+                    ParameterName = "@textobuscar",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 11,
+                    Value = Cliente.TextoBuscar
+                };
                 SqlCmd.Parameters.Add(ParTextoBuscar);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
