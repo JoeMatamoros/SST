@@ -366,5 +366,10 @@ namespace CapaPresentacion
             frmVistaCetagoria_Articulo form = new frmVistaCetagoria_Articulo();
             form.ShowDialog();
         }
+
+        private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
+        }
     }
 }
