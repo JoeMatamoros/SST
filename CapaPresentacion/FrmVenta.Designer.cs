@@ -466,6 +466,7 @@ namespace CapaPresentacion
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(60, 22);
             this.txtSerie.TabIndex = 11;
+            this.txtSerie.TextChanged += new System.EventHandler(this.txtSerie_TextChanged);
             // 
             // label6
             // 

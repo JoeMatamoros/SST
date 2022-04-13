@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Controlador;
+using System.Data.SqlClient;
 
 namespace CapaPresentacion
 {
@@ -59,6 +60,8 @@ namespace CapaPresentacion
             this.dtFecha_Vencimiento.Enabled = false;
             this.txtPrecio_Compra.ReadOnly = true;
             this.txtStock_Actual.ReadOnly = true;
+            this.txtSerie.ReadOnly = true;
+
         }
         //MOSTRAR CONFIRMACION
         private void MensajeOk(string mensaje)
@@ -77,7 +80,6 @@ namespace CapaPresentacion
             this.txtIdventa.Text = string.Empty;
             this.txtIdcliente.Text = string.Empty;
             this.txtCliente.Text = string.Empty;
-            this.txtSerie.Text = string.Empty;
             this.txtCorrelativo.Text = string.Empty;
             this.txtIgv.Text = string.Empty;
             this.lblTotalPagado.Text = "0,0";
@@ -101,7 +103,6 @@ namespace CapaPresentacion
         private void Habilitar(bool valor)
         {
             this.txtIdventa.ReadOnly = !valor;
-            this.txtSerie.ReadOnly = !valor;
             this.txtCorrelativo.ReadOnly = !valor;
             this.txtIgv.ReadOnly = !valor;
             this.dtFecha.Enabled = valor;
@@ -162,6 +163,13 @@ namespace CapaPresentacion
 
         }
 
+        //Generar numero de serie de factura
+        private void Serie() {
+            string GetSerie;
+            GetSerie = Convert.ToString(dataListado.Rows.Count + 1);
+            txtSerie.Text = GetSerie;
+        }
+
         //BUSCAR POR FECHAS
         private void BuscarFechas()
         {
@@ -198,9 +206,11 @@ namespace CapaPresentacion
             this.Top = 0;
             this.Left = 0;
             this.Mostrar();
+            this.Serie();
             this.Habilitar(false);
             this.Botones();
             this.crearTabla(); // Inicialmente para crear la tabla de detalles.
+
 
         }
 
@@ -373,6 +383,7 @@ namespace CapaPresentacion
                     this.Botones();
                     this.Limpiar();
                     this.Mostrar();
+                    this.Serie();
                 }
 
             }
@@ -449,7 +460,7 @@ namespace CapaPresentacion
                 int indiceFila = this.dataListadoDetalle.CurrentCell.RowIndex;
                 DataRow row = this.dtDetalle.Rows[indiceFila];
 
-                //DIMINUIS EL TOTALPAGADO
+                //DIMINUIR EL TOTALPAGADO
                 this.totalPagado = this.totalPagado - Convert.ToDecimal((row["subtotal"].ToString()));
                 this.lblTotalPagado.Text = totalPagado.ToString("#0.00");
 
@@ -467,6 +478,11 @@ namespace CapaPresentacion
             FrmReporteFactura frm = new FrmReporteFactura();
             frm.Idventa = Convert.ToInt32(this.dataListado.CurrentRow.Cells["idventa"].Value);
             frm.ShowDialog();
+        }
+
+        private void txtSerie_TextChanged(object sender, EventArgs e)
+        {
+         
         }
     }
 }

@@ -52,6 +52,7 @@ namespace CapaPresentacion
             this.txtIdarticulo.Visible = false;
             this.txtProveedor.ReadOnly = true;
             this.txtArticulo.ReadOnly = true;
+            //this.txtSerie.Text = Convert.ToString(dataListado.Rows.Count);
         }
 
         //MOSTRAR CONFIRMACION
