@@ -30,6 +30,9 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dtFechaNac = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -234,17 +237,40 @@ namespace CapaPresentacion
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataListado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataListado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataListado.EnableHeadersVisualStyles = false;
             this.dataListado.Location = new System.Drawing.Point(21, 111);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
+            this.dataListado.RowHeadersVisible = false;
             this.dataListado.RowHeadersWidth = 51;
             this.dataListado.RowTemplate.Height = 24;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(944, 355);
+            this.dataListado.Size = new System.Drawing.Size(1457, 400);
             this.dataListado.TabIndex = 7;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
@@ -353,7 +379,7 @@ namespace CapaPresentacion
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(995, 530);
+            this.tabPage1.Size = new System.Drawing.Size(1497, 530);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -377,7 +403,7 @@ namespace CapaPresentacion
             this.tabControl1.Location = new System.Drawing.Point(23, 70);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1003, 559);
+            this.tabControl1.Size = new System.Drawing.Size(1505, 559);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage2
@@ -386,7 +412,7 @@ namespace CapaPresentacion
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(995, 530);
+            this.tabPage2.Size = new System.Drawing.Size(1497, 530);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -423,7 +449,7 @@ namespace CapaPresentacion
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(16, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(951, 496);
+            this.groupBox1.Size = new System.Drawing.Size(1475, 496);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajadores";
@@ -531,7 +557,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1054, 660);
+            this.ClientSize = new System.Drawing.Size(1540, 707);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmTrabajador";

@@ -131,6 +131,17 @@ namespace CapaPresentacion
 
         }
 
+        /*Funcion de prueba para autoajustar DatagridView*/
+       /* private void AutoAdjustDatagrid() 
+        {
+            var height = dataListado.ColumnHeadersHeight;
+            foreach (DataGridViewRow dr in dataListado.Rows) 
+            {
+                height += dr.Height;
+            }
+            dataListado.Height = height;
+        }*/
+
         private void frmTrabajador_Load(object sender, EventArgs e)
         {
             this.Top = 0;
@@ -138,6 +149,7 @@ namespace CapaPresentacion
             this.Mostrar();
             this.Habilitar(false);
             this.Botones();
+            //AutoAdjustDatagrid();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
