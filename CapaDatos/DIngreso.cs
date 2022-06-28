@@ -68,64 +68,82 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spinsertar_ingreso";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdingreso = new SqlParameter();
-                ParIdingreso.ParameterName = "@idingreso";
-                ParIdingreso.SqlDbType = SqlDbType.Int;
-                ParIdingreso.Direction = ParameterDirection.Output;
+                SqlParameter ParIdingreso = new SqlParameter
+                {
+                    ParameterName = "@idingreso",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
                 SqlCmd.Parameters.Add(ParIdingreso);
 
-                SqlParameter ParIdtrabajador = new SqlParameter();
-                ParIdtrabajador.ParameterName = "@idtrabajador";
-                ParIdtrabajador.SqlDbType = SqlDbType.Int;
-                ParIdtrabajador.Value = Ingreso.Idtrabajador;
+                SqlParameter ParIdtrabajador = new SqlParameter
+                {
+                    ParameterName = "@idtrabajador",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Ingreso.Idtrabajador
+                };
                 SqlCmd.Parameters.Add(ParIdtrabajador);
 
-                SqlParameter ParIdproveedor = new SqlParameter();
-                ParIdproveedor.ParameterName = "@idproveedor";
-                ParIdproveedor.SqlDbType = SqlDbType.Int;
-                ParIdproveedor.Value = Ingreso.Idproveedor;
+                SqlParameter ParIdproveedor = new SqlParameter
+                {
+                    ParameterName = "@idproveedor",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Ingreso.Idproveedor
+                };
                 SqlCmd.Parameters.Add(ParIdproveedor);
 
-                SqlParameter ParFecha = new SqlParameter();
-                ParFecha.ParameterName = "@fecha";
-                ParFecha.SqlDbType = SqlDbType.Date;
-                ParFecha.Value = Ingreso.Fecha;
+                SqlParameter ParFecha = new SqlParameter
+                {
+                    ParameterName = "@fecha",
+                    SqlDbType = SqlDbType.Date,
+                    Value = Ingreso.Fecha
+                };
                 SqlCmd.Parameters.Add(ParFecha);
 
-                SqlParameter ParTipo_Comprobante = new SqlParameter();
-                ParTipo_Comprobante.ParameterName = "@tipo_comprobante";
-                ParTipo_Comprobante.SqlDbType = SqlDbType.VarChar;
-                ParTipo_Comprobante.Size = 50;
-                ParTipo_Comprobante.Value = Ingreso.Tipo_Comprobante;
+                SqlParameter ParTipo_Comprobante = new SqlParameter
+                {
+                    ParameterName = "@tipo_comprobante",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Ingreso.Tipo_Comprobante
+                };
                 SqlCmd.Parameters.Add(ParTipo_Comprobante);
 
-                SqlParameter ParSerie = new SqlParameter();
-                ParSerie.ParameterName = "@serie";
-                ParSerie.SqlDbType = SqlDbType.VarChar;
-                ParSerie.Size = 50;
-                ParSerie.Value = Ingreso.Serie;
+                SqlParameter ParSerie = new SqlParameter
+                {
+                    ParameterName = "@serie",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Ingreso.Serie
+                };
                 SqlCmd.Parameters.Add(ParSerie);
 
-                SqlParameter ParCorrelativo = new SqlParameter();
-                ParCorrelativo.ParameterName = "@correlativo";
-                ParCorrelativo.SqlDbType = SqlDbType.VarChar;
-                ParCorrelativo.Size = 50;
-                ParCorrelativo.Value = Ingreso.Correlativo;
+                SqlParameter ParCorrelativo = new SqlParameter
+                {
+                    ParameterName = "@correlativo",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Ingreso.Correlativo
+                };
                 SqlCmd.Parameters.Add(ParCorrelativo);
 
-                SqlParameter ParIgv = new SqlParameter();
-                ParIgv.ParameterName = "@igv";
-                ParIgv.SqlDbType = SqlDbType.Decimal;
-                ParIgv.Precision = 4;
-                ParIgv.Scale = 2;
-                ParIgv.Value = Ingreso.Igv;
+                SqlParameter ParIgv = new SqlParameter
+                {
+                    ParameterName = "@igv",
+                    SqlDbType = SqlDbType.Decimal,
+                    Precision = 4,
+                    Scale = 2,
+                    Value = Ingreso.Igv
+                };
                 SqlCmd.Parameters.Add(ParIgv);
 
-                SqlParameter ParEstado = new SqlParameter();
-                ParEstado.ParameterName = "@estado";
-                ParEstado.SqlDbType = SqlDbType.VarChar;
-                ParEstado.Size = 7;
-                ParEstado.Value = Ingreso.Estado;
+                SqlParameter ParEstado = new SqlParameter
+                {
+                    ParameterName = "@estado",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 7,
+                    Value = Ingreso.Estado
+                };
                 SqlCmd.Parameters.Add(ParEstado);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
@@ -248,18 +266,22 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spbuscar_ingreso_fecha";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParTextoBuscar = new SqlParameter();
-                ParTextoBuscar.ParameterName = "@textobuscar";
-                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar.Size = 50;
-                ParTextoBuscar.Value = TextoBuscar;
+                SqlParameter ParTextoBuscar = new SqlParameter
+                {
+                    ParameterName = "@textobuscar",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = TextoBuscar
+                };
                 SqlCmd.Parameters.Add(ParTextoBuscar);
 
-                SqlParameter ParTextoBuscar2 = new SqlParameter();
-                ParTextoBuscar2.ParameterName = "@textobuscar2";
-                ParTextoBuscar2.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar2.Size = 50;
-                ParTextoBuscar2.Value = TextoBuscar2;
+                SqlParameter ParTextoBuscar2 = new SqlParameter
+                {
+                    ParameterName = "@textobuscar2",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = TextoBuscar2
+                };
                 SqlCmd.Parameters.Add(ParTextoBuscar2);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);

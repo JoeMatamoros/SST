@@ -55,40 +55,52 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spinsertar_detalle_venta";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIddetalle_Venta = new SqlParameter();
-                ParIddetalle_Venta.ParameterName = "@iddetalle_venta";
-                ParIddetalle_Venta.SqlDbType = SqlDbType.Int;
-                ParIddetalle_Venta.Direction = ParameterDirection.Output;
+                SqlParameter ParIddetalle_Venta = new SqlParameter
+                {
+                    ParameterName = "@iddetalle_venta",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
                 SqlCmd.Parameters.Add(ParIddetalle_Venta);
 
-                SqlParameter ParIdventa = new SqlParameter();
-                ParIdventa.ParameterName = "@idventa";
-                ParIdventa.SqlDbType = SqlDbType.Int;
-                ParIdventa.Value = Detalle_Venta.Idventa;
+                SqlParameter ParIdventa = new SqlParameter
+                {
+                    ParameterName = "@idventa",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Detalle_Venta.Idventa
+                };
                 SqlCmd.Parameters.Add(ParIdventa);
 
-                SqlParameter ParIddetalle_ingreso = new SqlParameter();
-                ParIddetalle_ingreso.ParameterName = "@iddetalle_ingreso";
-                ParIddetalle_ingreso.SqlDbType = SqlDbType.Int;
-                ParIddetalle_ingreso.Value = Detalle_Venta.Iddetalle_ingreso;
+                SqlParameter ParIddetalle_ingreso = new SqlParameter
+                {
+                    ParameterName = "@iddetalle_ingreso",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Detalle_Venta.Iddetalle_ingreso
+                };
                 SqlCmd.Parameters.Add(ParIddetalle_ingreso);
 
-                SqlParameter ParCantidad= new SqlParameter();
-                ParCantidad.ParameterName = "@cantidad";
-                ParCantidad.SqlDbType = SqlDbType.Int;
-                ParCantidad.Value = Detalle_Venta.Cantidad;
+                SqlParameter ParCantidad = new SqlParameter
+                {
+                    ParameterName = "@cantidad",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Detalle_Venta.Cantidad
+                };
                 SqlCmd.Parameters.Add(ParCantidad);
 
-                SqlParameter ParPrecioVenta = new SqlParameter();
-                ParPrecioVenta.ParameterName = "@precio_venta";
-                ParPrecioVenta.SqlDbType = SqlDbType.Money;
-                ParPrecioVenta.Value = Detalle_Venta.Precio_Venta;
+                SqlParameter ParPrecioVenta = new SqlParameter
+                {
+                    ParameterName = "@precio_venta",
+                    SqlDbType = SqlDbType.Money,
+                    Value = Detalle_Venta.Precio_Venta
+                };
                 SqlCmd.Parameters.Add(ParPrecioVenta);
 
-                SqlParameter ParDescuento = new SqlParameter();
-                ParDescuento.ParameterName = "@descuento";
-                ParDescuento.SqlDbType = SqlDbType.Money;
-                ParDescuento.Value = Detalle_Venta.Descuento;
+                SqlParameter ParDescuento = new SqlParameter
+                {
+                    ParameterName = "@descuento",
+                    SqlDbType = SqlDbType.Money,
+                    Value = Detalle_Venta.Descuento
+                };
                 SqlCmd.Parameters.Add(ParDescuento);
 
 
