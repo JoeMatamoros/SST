@@ -152,11 +152,18 @@ namespace CapaPresentacion
 
                     if (this.IsNuevo)//Si la variable IsNuevo=true
                     {
-                        rpta = NPresentacion.Insertar(this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim());
+                        rpta = NPresentacion.Insertar(
+                            this.txtNombre.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim()
+                            );
                     }
                     else //SI NO ES IsNuevo es IsEditar
                     {
-                        rpta = NPresentacion.Editar(Convert.ToInt32(this.txtIdpresentacion.Text), this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim());
+                        rpta = NPresentacion.Editar(
+                            Convert.ToInt32(this.txtIdpresentacion.Text),
+                            this.txtNombre.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim()
+                            );
                     }
 
                     if (rpta.Equals("OK"))

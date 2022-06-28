@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Controlador;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using Controlador;
 
 namespace CapaPresentacion
 {
@@ -18,8 +11,8 @@ namespace CapaPresentacion
         private bool IsEditar = false;
         private static frmArticulo _Instancia;
         public static frmArticulo GetInstancia()
-        { 
-            if(_Instancia == null)
+        {
+            if (_Instancia == null)
             {
                 _Instancia = new frmArticulo();
             }
@@ -36,14 +29,14 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese nombre del articulo");
-            this.ttMensaje.SetToolTip(this.pxImagen,"Seleccione imagen de articulo");
+            this.ttMensaje.SetToolTip(this.pxImagen, "Seleccione imagen de articulo");
             this.ttMensaje.SetToolTip(this.txtCategoria, "Seleccione categoria");
             this.ttMensaje.SetToolTip(this.cbIdpresentacion, "Seleccione presentacion");
 
             this.txtIdcategoria.Visible = false;
             this.txtCategoria.ReadOnly = true;
             this.LlenarComboPResentacion();
-           
+
         }
 
         //MOSTRAR CONFIRMACION
@@ -144,15 +137,15 @@ namespace CapaPresentacion
         }
 
         /*Funcion de prueba para autoajustar DatagridView*/
-        private void AutoAdjustDatagrid() 
-         {
-             var height = dataListado.ColumnHeadersHeight;
-             foreach (DataGridViewRow dr in dataListado.Rows) 
-             {
-                 height += dr.Height;
-             }
-             dataListado.Height = height;
-         }
+        private void AutoAdjustDatagrid()
+        {
+            var height = dataListado.ColumnHeadersHeight;
+            foreach (DataGridViewRow dr in dataListado.Rows)
+            {
+                height += dr.Height;
+            }
+            dataListado.Height = height;
+        }
 
         private void frmArticulo_Load(object sender, EventArgs e)
         {
@@ -170,7 +163,7 @@ namespace CapaPresentacion
             OpenFileDialog dialog = new OpenFileDialog();
             DialogResult result = dialog.ShowDialog();
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.pxImagen.Image = Image.FromFile(dialog.FileName);
@@ -220,18 +213,31 @@ namespace CapaPresentacion
                 else
                 {
                     System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                    this.pxImagen.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
+                    this.pxImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                     byte[] imagen = ms.GetBuffer();
 
                     if (this.IsNuevo)//Si la variable IsNuevo=true
                     {
-                        rpta = NArticulo.Insertar(this.txtCodigo.Text,this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim(), imagen, 
-                            Convert.ToInt32(txtIdcategoria.Text),Convert.ToInt32(this.cbIdpresentacion.SelectedValue));
+                        rpta = NArticulo.Insertar(
+                            this.txtCodigo.Text, 
+                            this.txtNombre.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim(),
+                            imagen,
+                            Convert.ToInt32(txtIdcategoria.Text),
+                            Convert.ToInt32(this.cbIdpresentacion.SelectedValue)
+                            );
                     }
                     else //SI NO ES IsNuevo es IsEditar
                     {
-                        rpta = NArticulo.Editar(Convert.ToInt32(this.txtIdarticulo.Text), this.txtCodigo.Text, this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim(), imagen,
-                            Convert.ToInt32(txtIdcategoria.Text), Convert.ToInt32(this.cbIdpresentacion.SelectedValue));
+                        rpta = NArticulo.Editar(
+                            Convert.ToInt32(this.txtIdarticulo.Text),
+                            this.txtCodigo.Text,
+                            this.txtNombre.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim(),
+                            imagen,
+                            Convert.ToInt32(txtIdcategoria.Text),
+                            Convert.ToInt32(this.cbIdpresentacion.SelectedValue)
+                            );
                     }
 
                     if (rpta.Equals("OK"))

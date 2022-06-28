@@ -140,9 +140,17 @@ namespace CapaPresentacion
                 } else{
 
                     if (this.IsNuevo) {
-                        rpta = NCategoria.Insertar(this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim());
+                        rpta = NCategoria.Insertar(
+                            this.txtNombre.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim()
+                            );
                     } else{
-                        rpta = NCategoria.Editar(Convert.ToInt32(this.txtIdcategoria.Text),this.txtNombre.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim());
+
+                        rpta = NCategoria.Editar(
+                            Convert.ToInt32(this.txtIdcategoria.Text),
+                            this.txtNombre.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim()
+                            );
                     }
 
                     if (rpta.Equals("OK"))

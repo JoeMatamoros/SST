@@ -46,24 +46,30 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spinsertar_presentacion";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdPresentacion = new SqlParameter();
-                ParIdPresentacion.ParameterName = "@idpresentacion";
-                ParIdPresentacion.SqlDbType = SqlDbType.Int;
-                ParIdPresentacion.Direction = ParameterDirection.Output;
+                SqlParameter ParIdPresentacion = new SqlParameter
+                {
+                    ParameterName = "@idpresentacion",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
                 SqlCmd.Parameters.Add(ParIdPresentacion);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 50;
-                ParNombre.Value = Presentacion.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Presentacion.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@descripcion";
-                ParDescripcion.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion.Size = 255;
-                ParDescripcion.Value = Presentacion.Descripcion;
+                SqlParameter ParDescripcion = new SqlParameter
+                {
+                    ParameterName = "@descripcion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 255,
+                    Value = Presentacion.Descripcion
+                };
                 SqlCmd.Parameters.Add(ParDescripcion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
@@ -95,24 +101,30 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speditar_presentacion";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdPresentacion = new SqlParameter();
-                ParIdPresentacion.ParameterName = "@idpresentacion";
-                ParIdPresentacion.SqlDbType = SqlDbType.Int;
-                ParIdPresentacion.Value = Presentacion.IdPresentacion;
+                SqlParameter ParIdPresentacion = new SqlParameter
+                {
+                    ParameterName = "@idpresentacion",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Presentacion.IdPresentacion
+                };
                 SqlCmd.Parameters.Add(ParIdPresentacion);
 
-                SqlParameter ParNombre = new SqlParameter();
-                ParNombre.ParameterName = "@nombre";
-                ParNombre.SqlDbType = SqlDbType.VarChar;
-                ParNombre.Size = 50;
-                ParNombre.Value = Presentacion.Nombre;
+                SqlParameter ParNombre = new SqlParameter
+                {
+                    ParameterName = "@nombre",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Presentacion.Nombre
+                };
                 SqlCmd.Parameters.Add(ParNombre);
 
-                SqlParameter ParDescripcion = new SqlParameter();
-                ParDescripcion.ParameterName = "@descripcion";
-                ParDescripcion.SqlDbType = SqlDbType.VarChar;
-                ParDescripcion.Size = 255;
-                ParDescripcion.Value = Presentacion.Descripcion;
+                SqlParameter ParDescripcion = new SqlParameter
+                {
+                    ParameterName = "@descripcion",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 255,
+                    Value = Presentacion.Descripcion
+                };
                 SqlCmd.Parameters.Add(ParDescripcion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se edito el registro";
@@ -146,10 +158,12 @@ namespace CapaDatos
                 SqlCmd.CommandText = "speliminar_presentacion";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParIdPresentacion = new SqlParameter();
-                ParIdPresentacion.ParameterName = "@idpresentacion";
-                ParIdPresentacion.SqlDbType = SqlDbType.Int;
-                ParIdPresentacion.Value = Presentacion.IdPresentacion;
+                SqlParameter ParIdPresentacion = new SqlParameter
+                {
+                    ParameterName = "@idpresentacion",
+                    SqlDbType = SqlDbType.Int,
+                    Value = Presentacion.IdPresentacion
+                };
                 SqlCmd.Parameters.Add(ParIdPresentacion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se elimino el registro";
@@ -208,11 +222,13 @@ namespace CapaDatos
                 SqlCmd.CommandText = "spbuscar_presentacion_nombre";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter ParTextoBuscar = new SqlParameter();
-                ParTextoBuscar.ParameterName = "@textobuscar";
-                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
-                ParTextoBuscar.Size = 50;
-                ParTextoBuscar.Value = Presentacion.TextoBuscar;
+                SqlParameter ParTextoBuscar = new SqlParameter
+                {
+                    ParameterName = "@textobuscar",
+                    SqlDbType = SqlDbType.VarChar,
+                    Size = 50,
+                    Value = Presentacion.TextoBuscar
+                };
                 SqlCmd.Parameters.Add(ParTextoBuscar);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);

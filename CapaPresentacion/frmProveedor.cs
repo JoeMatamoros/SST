@@ -138,7 +138,8 @@ namespace CapaPresentacion
             if (cbBuscar.Text.Equals("Razon Social"))
             {
                 this.BuscarRazon_Social();
-            }else if (cbBuscar.Text.Equals("Documento"))
+            }
+            else if (cbBuscar.Text.Equals("Documento"))
             {
                 this.BuscarNum_Documento();
             }
